@@ -1,16 +1,10 @@
-@import "_normalize";
-@import "_variables";
+/* Author: Krzysztof Grudzień */
+/* -------------- FONTS ------------- */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
 
+/* -------------- UTILS ------------- */
+@import "utils/variables";
 
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-body {
-  color: $yellow;
-  background: $violet;
-}
+/* -------------- BASE -------------- */
+@import "base/normalize";
+@import "base/base";

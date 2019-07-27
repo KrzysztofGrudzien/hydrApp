@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>HydrApp</title>
-    <meta name="description" content="The First very simple WEB application PWA contains how much you drink water every day." />
+    <meta name="description"
+        content="The First very simple WEB application PWA contains how much you drink water every day." />
 
     <meta property="og:title" content="HydrApp" />
-    <meta property="og:description" content="The First very simple WEB application PWA contains how much you drink water every day." />
+    <meta property="og:description"
+        content="The First very simple WEB application PWA contains how much you drink water every day." />
     <!-- full url with http(s) ie. https://maciejkorsan.github.io/my-repo/ -->
     <meta property="og:url" content="" />
     <!-- full url to the image with http(s) ie. https://maciejkorsan.github.io/my-repo/assets/img/fb.png. Facebook suggests at least 1200 x 630. -->
@@ -16,23 +19,24 @@
 
     <link rel="manifest" href="manifest.json" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link
-      rel="apple-touch-icon"
-      sizes="192x192"
-      href="assets/pwa/icons/icon-192x192.png"
-    />
+    <link rel="apple-touch-icon" sizes="192x192" href="assets/pwa/icons/icon-192x192.png" />
 
-    <link
-      rel="icon"
-      type="image/png"
-      href="assets/pwa/icons/icon-192x192.png"
-    />
+    <link rel="icon" type="image/png" href="assets/pwa/icons/icon-192x192.png" />
 
     <link rel="stylesheet" href="css/main.css" />
-  </head>
-  <body>
-    <h1>Hello Cris :)</h1>
+</head>
 
+<body>
+    <header class="header">
+        <h1 class="header__logo">hydrapp</h1>
+    </header>
+    <main class="main">
+        <div class="app">
+            <div class="app__content"></div>
+        </div>
+        <div class="app__loader">loading ...</div>
+    </main>
     <script src="js/main.js"></script>
-  </body>
+</body>
+
 </html>
