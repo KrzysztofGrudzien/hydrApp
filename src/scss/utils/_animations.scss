@@ -1,0 +1,8 @@
+@keyframes slideLeft {
+    0% {
+        margin: 0 auto 63px calc(50% - 75px);
+    }
+    100% {
+        margin: 0 0 63px 0;
+    }
+}
