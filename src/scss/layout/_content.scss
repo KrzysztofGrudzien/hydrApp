@@ -12,4 +12,17 @@
         font-weight: 400;
         color: $light-blue;
     }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__glasses-counter {
+        display: flex;
+    }
+
+    &__glass {
+        margin: 2px;
+    }
 }
