@@ -385,6 +385,37 @@ ol li {
   font-weight: 400;
   color: #CBECFE; }
 
+.app__header-counter {
+  margin: 20px 0 0 0;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 53px;
+  text-align: center;
+  color: #CBECFE; }
+
+.app__glass-dimention {
+  margin: 0 0 20px 0;
+  font-size: 20px;
+  color: #CBECFE;
+  text-align: center; }
+
+.app__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative; }
+
+.app__glasses-counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.app__glass {
+  margin: 2px; }
+
 /* ================================== */
 /*             MAIN HEADER            */
 /* ================================== */
@@ -403,5 +434,24 @@ ol li {
       -ms-grid-row-align: center;
       align-self: center;
   fill: #CBECFE; }
+
+/* ================================== */
+/*           MAIN BUTTONS             */
+/* ================================== */
+.btn {
+  width: 76px;
+  height: 76px;
+  position: absolute;
+  border: solid 8px #3C7DC7;
+  border-radius: 50%;
+  background-color: #68C1F1;
+  -webkit-box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.35);
+          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.35); }
+  .btn--add {
+    top: 70px;
+    right: 70px; }
+  .btn--substract {
+    top: 135px;
+    right: 20px; }
 
 /*# sourceMappingURL=main.css.map */
