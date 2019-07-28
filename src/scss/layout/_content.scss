@@ -13,6 +13,22 @@
         color: $light-blue;
     }
 
+    &__header-counter {
+        margin: 20px 0 0 0;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 53px;
+        text-align: center;
+        color: $light-blue;
+    }
+
+    &__glass-dimention {
+        margin: 0 0 20px 0;
+        font-size: 20px;
+        color: $light-blue;
+        text-align: center;
+    }
+
     &__content {
         display: flex;
         justify-content: center;
