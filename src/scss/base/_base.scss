@@ -1,0 +1,37 @@
+/* ================================== */
+/*          GENERAL SETTINGS          */
+/* ================================== */
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    background-image: radial-gradient($navy, $navy-dark);
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    display: inline-block;
+}
+
+ol li {
+    display: block;
+    list-style: none;
+}
