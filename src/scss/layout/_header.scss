@@ -3,7 +3,11 @@
 /* ================================== */
 
 .header {
+    width: 96%;
+    
     &__logo {
-        margin: 0 0 63px 0;
+        width: 150px;
+        margin-bottom: 63px;
+        animation: slideLeft 2s 4s ease-in-out both;
     }
 }
