@@ -1,0 +1,23 @@
+/* ================================== */
+/*           MAIN BUTTONS             */
+/* ================================== */
+
+.btn {
+    width: 76px;
+    height: 76px;
+    position: absolute;
+    border: solid 8px $blue-dark;
+    border-radius: 50%;
+    background-color: $blue;
+    box-shadow: 2px 2px 8px rgba(0,0,0,.35);
+
+    &--add {
+        top: 70px;
+        right: 70px;
+    }
+
+    &--substract {
+        top: 135px;
+        right: 20px;
+    }
+}
