@@ -427,6 +427,80 @@ ol li {
     -webkit-animation: slideLeft 2s 4s ease-in-out both;
             animation: slideLeft 2s 4s ease-in-out both; }
 
+/* ================================== */
+/*           APP NAVIGATION           */
+/* ================================== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  background-color: #E4F2F9; }
+  .nav__header {
+    width: 100%;
+    height: 180px;
+    background-image: -webkit-gradient(linear, left bottom, right top, from(#68C1F1), to(#3C7DC7));
+    background-image: -webkit-linear-gradient(left bottom, #68C1F1, #3C7DC7);
+    background-image: -o-linear-gradient(left bottom, #68C1F1, #3C7DC7);
+    background-image: linear-gradient(left bottom, #68C1F1, #3C7DC7); }
+  .nav__header-img {
+    margin: 0;
+    padding: 15px 0 0 20px; }
+  .nav__header-summary {
+    margin: -20px 0 0 0;
+    padding-right: 20px;
+    font-size: 20px;
+    color: #CBECFE;
+    text-align: right; }
+  .nav__header-summary-progress {
+    height: 4px;
+    margin-top: 5px;
+    background-color: #CBECFE; }
+  .nav__header-progress-bar {
+    width: 10%;
+    height: 4px;
+    background-color: #02416A; }
+  .nav__content {
+    margin: 0 auto;
+    max-width: 90%; }
+  .nav__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+    margin: 30px 0 0 0;
+    font-size: 22px;
+    font-weight: 600; }
+  .nav__list-item {
+    height: 35px;
+    margin-bottom: 36px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .nav__list-item:nth-of-type(2) {
+    margin-bottom: 100px;
+    border-bottom: solid 1px #BCBCBC;
+    padding-bottom: 80px; }
+  .nav__list-item:nth-of-type(3) {
+    height: 50px;
+    margin-bottom: 40px;
+    border-bottom: solid 1px #BCBCBC;
+    padding-bottom: 80px; }
+  .nav__list-link:link, .nav__list-link:visited, .nav__list-link:active, .nav__list-link:hover {
+    display: inline-block;
+    line-height: 35px;
+    margin-left: 31px;
+    text-decoration: none;
+    color: #515151; }
+  .nav__list-link-contact {
+    padding-top: 10px; }
+
 /* ------------ COMPONENTS ---------- */
 /* ------------ MAIN SVG DROP ---------- */
 .app__drop {
