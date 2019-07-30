@@ -18,7 +18,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100%;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
     background-image: radial-gradient($navy, $navy-dark);
 }
