@@ -14,10 +14,16 @@
     &--add {
         top: 70px;
         right: 70px;
+        background-image: url("../assets/img/add-glass.svg");
+        background-repeat: no-repeat;
+        background-position: center center;
     }
 
     &--substract {
         top: 135px;
         right: 20px;
+        background-image: url("../assets/img/remove-glass.svg");
+        background-repeat: no-repeat;
+        background-position: center center;
     }
 }
