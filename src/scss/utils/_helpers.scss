@@ -1,0 +1,13 @@
+/* ================================== */
+/*           HELPER CLASSES           */
+/* ================================== */
+
+/* ------------ ANIMATIONS ----------- */
+
+.nav--animation-right {
+    animation: slideMenuRight .4s ease-in-out both;
+}
+
+.nav--animation-left {
+    animation: slideMenuLeft .4s ease-in-out both;
+}
