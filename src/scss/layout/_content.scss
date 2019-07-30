@@ -36,9 +36,21 @@
 
     &__glasses-counter {
         display: flex;
+        width: 340px;
     }
 
     &__glass {
+        height: 45px;
+        width: 30px;
         margin: 2px;
+        background-image: url("../assets/img/glass-empty.svg");
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        &--add {
+            background-image: url("../assets/img/glass-full.svg");
+            background-repeat: no-repeat;
+            background-position: center center; 
+        }
     }
 }
