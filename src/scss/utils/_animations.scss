@@ -6,3 +6,21 @@
         margin: 0 0 63px 0;
     }
 }
+
+@keyframes slideMenuRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideMenuLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

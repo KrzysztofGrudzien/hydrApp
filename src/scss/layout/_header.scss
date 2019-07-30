@@ -4,10 +4,63 @@
 
 .header {
     width: 96%;
+    display: flex;
+    justify-content: space-between;
     
     &__logo {
         width: 150px;
         margin-bottom: 63px;
         animation: slideLeft 2s 4s ease-in-out both;
+    }
+
+    &__nav-switcher-box {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        z-index: 100;
+        cursor: pointer;
+    }
+
+    &__nav-switcher {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        width: 30px;
+        height: 2px;
+        background-color: $light-blue;
+        cursor: pointer;
+    }
+
+    &__nav-switcher::after {
+        content: '';
+        width: 30px;
+        height: 2px;
+        position: absolute;
+        background-color: $light-blue;
+        bottom: 10px;
+    }
+
+    &__nav-switcher::before {
+        content: '';
+        width: 30px;
+        height: 2px;
+        position: absolute;
+        background-color: $light-blue;
+        top: 10px;
+    }
+
+    &__nav-switcher--close {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        width: 30px;
+        height: 30px;
+        background-image: url(../assets/img/arrow-left.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition: transparent .4s ease-out;
+        cursor: pointer;
     }
 }
