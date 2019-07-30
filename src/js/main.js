@@ -15,13 +15,15 @@ if ('serviceWorker' in navigator) {
 }
 
 const switcherMenu = document.querySelector('.header__nav-switcher-box--js'),
-  navigation = document.querySelector('.nav');
+  navigation = document.querySelector('.nav--js'),
+  menuIcon = document.querySelector('.header__nav-switcher--js');
 
-function showMenu() {
+function toggleMenu() {
   navigation.removeAttribute('hidden');
   navigation.classList.toggle('nav--animation-right');
   navigation.classList.toggle('nav--animation-left');
-
+  menuIcon.classList.toggle('header__nav-switcher--close');
+  menuIcon.classList.toggle('header__nav-switcher');
 }
-switcherMenu.addEventListener('click', showMenu);
+switcherMenu.addEventListener('click', toggleMenu);
 
