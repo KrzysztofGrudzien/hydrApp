@@ -488,7 +488,7 @@ ol li {
     -webkit-animation: slideLeft 2s 4s ease-in-out both;
             animation: slideLeft 2s 4s ease-in-out both; }
   .header__logo-img {
-    width: auto; }
+    width: 150px; }
   .header__nav-switcher-box {
     position: relative;
     width: 50px;
