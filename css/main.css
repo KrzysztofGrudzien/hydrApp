@@ -403,9 +403,9 @@ body {
   height: 100%;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   background-color: #011C32;
-  background-image: -webkit-radial-gradient(#02416A, #011C32);
-  background-image: -o-radial-gradient(#02416A, #011C32);
-  background-image: radial-gradient(#02416A, #011C32); }
+  background-image: -webkit-radial-gradient(circle, #02416A, #011C32);
+  background-image: -o-radial-gradient(circle, #02416A, #011C32);
+  background-image: radial-gradient(circle, #02416A, #011C32); }
 
 ul {
   list-style: none; }
