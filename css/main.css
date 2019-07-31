@@ -400,8 +400,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100vh;
+  height: 100%;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  background-color: #011C32;
   background-image: -webkit-radial-gradient(#02416A, #011C32);
   background-image: -o-radial-gradient(#02416A, #011C32);
   background-image: radial-gradient(#02416A, #011C32); }
@@ -480,7 +481,8 @@ ol li {
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  margin-top: 10px; }
   .header__logo {
     margin-bottom: 63px;
     -webkit-animation: slideLeft 2s 4s ease-in-out both;
