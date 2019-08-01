@@ -19,8 +19,7 @@ const switcherMenu = document.querySelector('.header__nav-switcher-box--js'),
     menuIcon = document.querySelector('.header__nav-switcher--js'),
     btnAddGlass = document.querySelector('.btn--add-js'),
     btnRemoveGlass = document.querySelector('.btn--substract-js'),
-    counterGlasses = document.querySelector('.app__header-counter--js'),
-    glassesCounterBox = document.querySelector('.app__glasses-counter--js');
+    counterGlasses = document.querySelector('.app__header-counter--js');
 
 let glasses = 0;
 const maxGlasses = 10;
@@ -38,32 +37,24 @@ if (!localStorage.getItem(key)) {
     localStorage.setItem(key, 0);
     counterGlasses.innerHTML = `0/${maxGlasses}`;
 } else {
-    counterGlasses.innerHTML = `${glasses}/${maxGlasses}`;
+    counterGlasses.innerHTML = `${localStorage.getItem(key)}/${maxGlasses}`;
 }
 
 function addGlass() {
-    if (glasses >= 10) {
+    if (localStorage.getItem(key) >= 10) {
         counterGlasses.innerHTML = `10/${maxGlasses}`;
     } else {
-        glasses = glasses + 1;
-        counterGlasses.innerHTML = `${parseInt(glasses)}/${maxGlasses}`;
-        const newGlass = document.createElement('div');
-        newGlass.classList.add('app__glass');
-        newGlass.classList.add('app__glass--add');
-        glassesCounterBox.appendChild(newGlass);
-        localStorage.setItem(key, glasses);
+        localStorage.setItem(key, parseInt(localStorage.getItem(key)) + 1);
+        counterGlasses.innerHTML = `${parseInt(localStorage.getItem(key))}/${maxGlasses}`;
     }
 }
 
 function removeGlass() {
-    if (glasses < 1) {
+    if (localStorage.getItem(key) < 1) {
         counterGlasses.innerHTML = `0/${maxGlasses}`;
     } else {
-        glasses = glasses - 1;
-        counterGlasses.innerHTML = `${parseInt(glasses)}/${maxGlasses}`;
-        const newGlass = document.querySelector('.app__glass');
-        glassesCounterBox.removeChild(newGlass);
-        localStorage.setItem(key, glasses);
+        counterGlasses.innerHTML = `${parseInt(localStorage.getItem(key) - 1)}/${maxGlasses}`;
+        localStorage.setItem(key, parseInt(localStorage.getItem(key)) - 1);
     }
 }
 
