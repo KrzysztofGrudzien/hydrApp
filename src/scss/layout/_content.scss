@@ -36,6 +36,7 @@
 
     &__glasses-counter {
         display: flex;
+        flex-wrap: wrap;
         width: 340px;
     }
 
