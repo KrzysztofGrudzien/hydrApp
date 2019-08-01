@@ -401,6 +401,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
+  position: relative;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   background-color: #011C32;
   background-image: -webkit-radial-gradient(circle, #02416A, #011C32);
@@ -453,26 +454,6 @@ ol li {
           justify-content: center;
   position: relative; }
 
-.app__glasses-counter {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 340px; }
-
-.app__glass {
-  height: 45px;
-  width: 30px;
-  margin: 2px;
-  background-image: url("../assets/img/glass-empty.svg");
-  background-repeat: no-repeat;
-  background-position: center center; }
-  .app__glass--add {
-    background-image: url("../assets/img/glass-full.svg");
-    background-repeat: no-repeat;
-    background-position: center center; }
-
 /* ================================== */
 /*             MAIN HEADER            */
 /* ================================== */
@@ -495,7 +476,7 @@ ol li {
     position: relative;
     width: 50px;
     height: 50px;
-    z-index: 100;
+    z-index: 99;
     cursor: pointer; }
   .header__nav-switcher {
     position: absolute;
@@ -617,6 +598,64 @@ ol li {
   .nav__list-link-contact {
     padding-top: 10px; }
 
+/* ================================== */
+/*        PART OF APP CONTENT         */
+/* ================================== */
+/*------------ STATISTICS ------------*/
+.statistics {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  background-color: #CBECFE; }
+  .statistics__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    width: 100%;
+    height: 72px;
+    margin: 0;
+    background-image: -webkit-gradient(linear, left bottom, right top, from(#68C1F1), to(#3C7DC7));
+    background-image: -webkit-linear-gradient(left bottom, #68C1F1, #3C7DC7);
+    background-image: -o-linear-gradient(left bottom, #68C1F1, #3C7DC7);
+    background-image: linear-gradient(left bottom, #68C1F1, #3C7DC7); }
+  .statistics__header-title {
+    color: #CBECFE;
+    font-weight: 400;
+    text-transform: capitalize;
+    padding-left: 58px; }
+  .statistics__switcher-box {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 1001;
+    cursor: pointer; }
+  .statistics__switcher {
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    background-image: url(../assets/img/arrow-left.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-transition: transparent .4s ease-out;
+    -o-transition: transparent .4s ease-out;
+    transition: transparent .4s ease-out;
+    cursor: pointer; }
+
 /* ------------ COMPONENTS ---------- */
 /* ------------ MAIN SVG DROP ---------- */
 .app__drop {
@@ -639,13 +678,13 @@ ol li {
           box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.35); }
   .btn--add {
     top: 70px;
-    right: 70px;
+    right: 40px;
     background-image: url("../assets/img/add-glass.svg");
     background-repeat: no-repeat;
     background-position: center center; }
   .btn--substract {
     top: 135px;
-    right: 20px;
+    right: -10px;
     background-image: url("../assets/img/remove-glass.svg");
     background-repeat: no-repeat;
     background-position: center center; }

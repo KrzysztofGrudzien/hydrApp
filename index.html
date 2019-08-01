@@ -42,9 +42,10 @@
             </div>
         </header>
         <div class="nav__content">
-            <ul class="nav__list">
-                <li class="nav__list-item"><img class="nav__icon" src="assets/img/statistics.svg"
-                        alt="statistics icon."><a href="#" class="nav__list-link">Statistics</a></li>
+            <ul class="nav__list nav__list--js">
+                <li class="nav__list-item nav__list-item-statistic--js"><img class="nav__icon"
+                        src="assets/img/statistics.svg" alt="statistics icon."><a href="#"
+                        class="nav__list-link">Statistics</a></li>
                 <li class="nav__list-item"><img class="nav__icon" src="assets/img/achievements.svg"
                         alt="achievements icon."><a href="#" class="nav__list-link">Achievements</a></li>
                 <li class="nav__list-item"><img class="nav__icon nav__icon--contact" src="assets/img/contact.svg"
@@ -54,6 +55,32 @@
                         href="#" class="nav__list-link">Settings</a></li>
             </ul>
         </div>
+        <section class="statistics statistics--js" hidden>
+            <h2 class="statistics__header">
+                <span class="statistics__header-title">statistics</span>
+                <div class="statistics__switcher-box statistics__switcher-box--js">
+                    <div class="statistics__switcher statistics__switcher--js"></div>
+                </div>
+            </h2>
+            <div class="statisctics__box">
+                <img class="statistics__icon" src="" alt="">
+                <div class="statistics__table"></div>
+            </div>
+            <div class="statistics__averages">
+                <div class="statistics__average">
+                    <p class="statistics__volume">Average volume</p>
+                    <span class="statistics__value">0ML / DAY</span>
+                </div>
+                <div class="statistics__average">
+                    <p class="statistics__volume">Average complation</p>
+                    <span class="statistics__value">0%</span>
+                </div>
+                <div class="statistics__average">
+                    <p class="statistics__volume">Drink frequency</p>
+                    <span class="statistics__value">0 / DAY</span>
+                </div>
+            </div>
+        </section>
     </nav>
     <main class="main">
         <div class="app">
@@ -66,7 +93,6 @@
             <section class="app__glasses">
                 <h2 class="app__header-counter app__header-counter--js">0/10</h2>
                 <p class="app__glass-dimention">200ML Glass</p>
-                <div class="app__glasses-counter app__glasses-counter--js"></div>
             </section>
         </div>
     </main>
