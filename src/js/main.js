@@ -24,7 +24,7 @@ const switcherMenu = document.querySelector('.header__nav-switcher-box--js'),
 
 let glasses = 0;
 const maxGlasses = 10;
-const key = new Date().toISOString().slice(0, 19);
+const key = new Date().toISOString().slice(0, 10);
 
 function toggleMenu() {
     navigation.removeAttribute('hidden');
@@ -32,6 +32,13 @@ function toggleMenu() {
     navigation.classList.toggle('nav--animation-left');
     menuIcon.classList.toggle('header__nav-switcher--close');
     menuIcon.classList.toggle('header__nav-switcher');
+}
+
+if (!localStorage.getItem(key)) {
+    localStorage.setItem(key, 0);
+    counterGlasses.innerHTML = `0/${maxGlasses}`;
+} else {
+    counterGlasses.innerHTML = `${glasses}/${maxGlasses}`;
 }
 
 function addGlass() {
