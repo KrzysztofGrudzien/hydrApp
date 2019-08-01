@@ -19,7 +19,10 @@ const switcherMenu = document.querySelector('.header__nav-switcher-box--js'),
     menuIcon = document.querySelector('.header__nav-switcher--js'),
     btnAddGlass = document.querySelector('.btn--add-js'),
     btnRemoveGlass = document.querySelector('.btn--substract-js'),
-    counterGlasses = document.querySelector('.app__header-counter--js');
+    counterGlasses = document.querySelector('.app__header-counter--js'),
+    hideAppPart = document.querySelector('.statistics__switcher-box--js'),
+    statistics = document.querySelector('.statistics--js'),
+    statisticsLink = document.querySelector('.nav__list-item-statistic--js');
 
 let glasses = 0;
 const maxGlasses = 10;
@@ -31,6 +34,21 @@ function toggleMenu() {
     navigation.classList.toggle('nav--animation-left');
     menuIcon.classList.toggle('header__nav-switcher--close');
     menuIcon.classList.toggle('header__nav-switcher');
+}
+
+function showStatistics() {
+    const arrowLeft = document.querySelector('.header__nav-switcher--close');
+    statistics.removeAttribute('hidden');
+    statistics.classList.add('nav--animation-right');
+    statistics.classList.remove('nav--animation-left');
+    arrowLeft.style.opacity = '0';
+}
+
+function hideStatistics() {
+    const arrowLeft = document.querySelector('.header__nav-switcher--close');
+    statistics.classList.remove('nav--animation-right');
+    statistics.classList.add('nav--animation-left');
+    arrowLeft.style.opacity = null;
 }
 
 if (!localStorage.getItem(key)) {
@@ -61,4 +79,6 @@ function removeGlass() {
 btnRemoveGlass.addEventListener('click', removeGlass);
 btnAddGlass.addEventListener('click', addGlass);
 switcherMenu.addEventListener('click', toggleMenu);
+statisticsLink.addEventListener('click', showStatistics);
+hideAppPart.addEventListener('click', hideStatistics);
 
