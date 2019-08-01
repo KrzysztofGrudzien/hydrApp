@@ -39,7 +39,7 @@ function addGlass() {
         counterGlasses.innerHTML = `10/${maxGlasses}`;
     } else {
         glasses = glasses + 1;
-        counterGlasses.innerHTML = `${glasses}/${maxGlasses}`;
+        counterGlasses.innerHTML = `${parseInt(glasses)}/${maxGlasses}`;
         const newGlass = document.createElement('div');
         newGlass.classList.add('app__glass');
         newGlass.classList.add('app__glass--add');
@@ -48,15 +48,12 @@ function addGlass() {
     }
 }
 
-
-
-
 function removeGlass() {
     if (glasses < 1) {
         counterGlasses.innerHTML = `0/${maxGlasses}`;
     } else {
         glasses = glasses - 1;
-        counterGlasses.innerHTML = `${glasses}/${maxGlasses}`;
+        counterGlasses.innerHTML = `${parseInt(glasses)}/${maxGlasses}`;
         const newGlass = document.querySelector('.app__glass');
         glassesCounterBox.removeChild(newGlass);
         localStorage.setItem(key, glasses);
