@@ -1,0 +1,100 @@
+/* ================================== */
+/*        PART OF APP CONTENT         */
+/* ================================== */
+
+/*------------- SETTINGS -------------*/
+
+.settings {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    background-color: $lighter-blue;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        height: 72px;
+        margin: 0;
+        background-image: linear-gradient(left bottom,$blue, $blue-dark);
+    }
+
+    &__header-title {
+        color: $light-blue;
+        font-weight: 400;
+        text-transform: capitalize;
+        padding-left: 58px;
+    }
+
+    &__switcher-box {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        z-index: 1001;
+        cursor: pointer;
+    }
+
+    &__switcher {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        width: 30px;
+        height: 30px;
+        background-image: url(../assets/img/arrow-left.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition: transparent .4s ease-out;
+        cursor: pointer;
+    }
+
+    &__box {
+        width: 100%;
+        height: 313px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+
+    &__icon {
+        align-self: flex-start;
+        margin-left: 17px;
+        margin-top: 10px;
+    }
+
+    &__units, &__avarage-amounts {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 17px;
+        padding-right: 17px;
+        box-shadow: 1px 1px 5px rgba(0,0,0, .15);
+        margin-top: 30px;
+    }
+
+    &__units-header, &__avarage-amount-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    &__avarage-amount-header {
+        padding-left: 20px;
+    }
+
+    &__units-header-description, &__avarage-amount-header-description {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    &__unit, &__avarage-amount {
+        font-size: 30px;
+        font-weight: 400;
+    }
+}

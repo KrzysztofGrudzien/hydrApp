@@ -28,10 +28,12 @@ const switcherMenu = document.querySelector('.header__nav-switcher-box--js'),
     achievementsLink = document.querySelector('.nav__list-item-achievement--js'),
     hidePartContact = document.querySelector('.contact__switcher-box--js'),
     contact = document.querySelector('.contact--js'),
-    contactLink = document.querySelector('.nav__list-item-contact--js');
+    contactLink = document.querySelector('.nav__list-item-contact--js'),
+    hidePartSettings = document.querySelector('.settings__switcher-box--js'),
+    settings = document.querySelector('.settings--js'),
+    settingsLink = document.querySelector('.nav__list-item-settings--js');
 
 let glasses = 0;
-const maxGlasses = 10;
 const key = new Date().toISOString().slice(0, 10);
 
 function toggleMenu() {
@@ -87,27 +89,38 @@ function hideContact() {
     arrowLeft.style.opacity = null;
 }
 
+function showSettings() {
+    const arrowLeft = document.querySelector('.header__nav-switcher--close');
+    settings.removeAttribute('hidden');
+    settings.classList.add('nav--animation-right');
+    settings.classList.remove('nav--animation-left');
+    arrowLeft.style.opacity = '0';
+}
+
+function hideSettings() {
+    const arrowLeft = document.querySelector('.header__nav-switcher--close');
+    settings.classList.remove('nav--animation-right');
+    settings.classList.add('nav--animation-left');
+    arrowLeft.style.opacity = null;
+}
+
 if (!localStorage.getItem(key)) {
     localStorage.setItem(key, 0);
     counterGlasses.innerHTML = `0/${maxGlasses}`;
 } else {
-    counterGlasses.innerHTML = `${localStorage.getItem(key)}/${maxGlasses}`;
+    counterGlasses.innerHTML = `${localStorage.getItem(key)}`;
 }
 
 function addGlass() {
-    if (localStorage.getItem(key) >= 10) {
-        counterGlasses.innerHTML = `10/${maxGlasses}`;
-    } else {
-        localStorage.setItem(key, parseInt(localStorage.getItem(key)) + 1);
-        counterGlasses.innerHTML = `${parseInt(localStorage.getItem(key))}/${maxGlasses}`;
-    }
+    localStorage.setItem(key, parseInt(localStorage.getItem(key)) + 1);
+    counterGlasses.innerHTML = `${parseInt(localStorage.getItem(key))}`;
 }
 
 function removeGlass() {
     if (localStorage.getItem(key) < 1) {
-        counterGlasses.innerHTML = `0/${maxGlasses}`;
+        counterGlasses.innerHTML = `${parseInt(0)}`;
     } else {
-        counterGlasses.innerHTML = `${parseInt(localStorage.getItem(key) - 1)}/${maxGlasses}`;
+        counterGlasses.innerHTML = `${parseInt(localStorage.getItem(key) - 1)}`;
         localStorage.setItem(key, parseInt(localStorage.getItem(key)) - 1);
     }
 }
@@ -121,4 +134,6 @@ hidePartStatistics.addEventListener('click', hideStatistics);
 hidePartAchievements.addEventListener('click', hideAchievements);
 contactLink.addEventListener('click', showContact);
 hidePartContact.addEventListener('click', hideContact);
+settingsLink.addEventListener('click', showSettings);
+hidePartSettings.addEventListener('click', hideSettings);
 
