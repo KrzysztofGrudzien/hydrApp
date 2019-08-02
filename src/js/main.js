@@ -31,7 +31,6 @@ const switcherMenu = document.querySelector('.header__nav-switcher-box--js'),
     contactLink = document.querySelector('.nav__list-item-contact--js');
 
 let glasses = 0;
-const maxGlasses = 10;
 const key = new Date().toISOString().slice(0, 10);
 
 function toggleMenu() {
@@ -91,23 +90,19 @@ if (!localStorage.getItem(key)) {
     localStorage.setItem(key, 0);
     counterGlasses.innerHTML = `0/${maxGlasses}`;
 } else {
-    counterGlasses.innerHTML = `${localStorage.getItem(key)}/${maxGlasses}`;
+    counterGlasses.innerHTML = `${localStorage.getItem(key)}`;
 }
 
 function addGlass() {
-    if (localStorage.getItem(key) >= 10) {
-        counterGlasses.innerHTML = `10/${maxGlasses}`;
-    } else {
-        localStorage.setItem(key, parseInt(localStorage.getItem(key)) + 1);
-        counterGlasses.innerHTML = `${parseInt(localStorage.getItem(key))}/${maxGlasses}`;
-    }
+    localStorage.setItem(key, parseInt(localStorage.getItem(key)) + 1);
+    counterGlasses.innerHTML = `${parseInt(localStorage.getItem(key))}`;
 }
 
 function removeGlass() {
     if (localStorage.getItem(key) < 1) {
-        counterGlasses.innerHTML = `0/${maxGlasses}`;
+        counterGlasses.innerHTML = `${parseInt(0)}`;
     } else {
-        counterGlasses.innerHTML = `${parseInt(localStorage.getItem(key) - 1)}/${maxGlasses}`;
+        counterGlasses.innerHTML = `${parseInt(localStorage.getItem(key) - 1)}`;
         localStorage.setItem(key, parseInt(localStorage.getItem(key)) - 1);
     }
 }
