@@ -82,4 +82,59 @@
         border: solid 8px #fff;
         box-shadow: 2px 0 5px rgba(0,0,0,.15);
     }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    &__details-email, &__details-phone, &__details-www {
+        width: 100%;
+        padding-left: 20px;
+        display: flex;
+    }
+
+    &__email {
+        margin-left: 20px;
+    }
+
+    &__phone {
+        margin-left: 30px;
+    }
+
+    &__details-www-icon {
+        margin-right: 24px;
+    }
+
+    &__details-email-icon {
+        width: 25px;
+    }
+
+    &__www-link:link, &__www-link:visited, &__www-link:active, &__www-link:hover {
+         color: $grey;
+         text-decoration: none;
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__social-header {
+        font-size: 16px;
+        font-weight: 600;
+        padding-left: 20px;
+    }
+
+    &__social-list {
+        margin: 0;
+        padding-left: 20px;
+    }
+
+    &__social-item {
+        margin-right: 20px;
+    }
 }
