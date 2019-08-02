@@ -20,9 +20,12 @@ const switcherMenu = document.querySelector('.header__nav-switcher-box--js'),
     btnAddGlass = document.querySelector('.btn--add-js'),
     btnRemoveGlass = document.querySelector('.btn--substract-js'),
     counterGlasses = document.querySelector('.app__header-counter--js'),
-    hideAppPart = document.querySelector('.statistics__switcher-box--js'),
+    hidePartStatistics = document.querySelector('.statistics__switcher-box--js'),
     statistics = document.querySelector('.statistics--js'),
-    statisticsLink = document.querySelector('.nav__list-item-statistic--js');
+    statisticsLink = document.querySelector('.nav__list-item-statistic--js'),
+    hidePartAchievements = document.querySelector('.achievements__switcher-box--js'),
+    achievements = document.querySelector('.achievements--js'),
+    achievementsLink = document.querySelector('.nav__list-item-achievement--js');
 
 let glasses = 0;
 const maxGlasses = 10;
@@ -48,6 +51,21 @@ function hideStatistics() {
     const arrowLeft = document.querySelector('.header__nav-switcher--close');
     statistics.classList.remove('nav--animation-right');
     statistics.classList.add('nav--animation-left');
+    arrowLeft.style.opacity = null;
+}
+
+function showAchievements() {
+    const arrowLeft = document.querySelector('.header__nav-switcher--close');
+    achievements.removeAttribute('hidden');
+    achievements.classList.add('nav--animation-right');
+    achievements.classList.remove('nav--animation-left');
+    arrowLeft.style.opacity = '0';
+}
+
+function hideAchievements() {
+    const arrowLeft = document.querySelector('.header__nav-switcher--close');
+    achievements.classList.remove('nav--animation-right');
+    achievements.classList.add('nav--animation-left');
     arrowLeft.style.opacity = null;
 }
 
@@ -80,5 +98,7 @@ btnRemoveGlass.addEventListener('click', removeGlass);
 btnAddGlass.addEventListener('click', addGlass);
 switcherMenu.addEventListener('click', toggleMenu);
 statisticsLink.addEventListener('click', showStatistics);
-hideAppPart.addEventListener('click', hideStatistics);
+achievementsLink.addEventListener('click', showAchievements);
+hidePartStatistics.addEventListener('click', hideStatistics);
+hidePartAchievements.addEventListener('click', hideAchievements);
 
