@@ -609,7 +609,7 @@ ol li {
   z-index: 1001;
   top: 0;
   left: 0;
-  background-color: #CBECFE; }
+  background-color: #E4F2F9; }
   .statistics__header {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -716,7 +716,7 @@ ol li {
   z-index: 1001;
   top: 0;
   left: 0;
-  background-color: #CBECFE; }
+  background-color: #E4F2F9; }
   .achievements__header {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -803,6 +803,96 @@ ol li {
     padding: 10px; }
   .achievements__value {
     color: #3C7DC7; }
+
+/* ================================== */
+/*        PART OF APP CONTENT         */
+/* ================================== */
+/*------------- CONTACT --------------*/
+.contact {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  background-color: #E4F2F9; }
+  .contact__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    width: 100%;
+    height: 72px;
+    margin: 0;
+    background-image: -webkit-gradient(linear, left bottom, right top, from(#68C1F1), to(#3C7DC7));
+    background-image: -webkit-linear-gradient(left bottom, #68C1F1, #3C7DC7);
+    background-image: -o-linear-gradient(left bottom, #68C1F1, #3C7DC7);
+    background-image: linear-gradient(left bottom, #68C1F1, #3C7DC7); }
+  .contact__header-title {
+    color: #CBECFE;
+    font-weight: 400;
+    text-transform: capitalize;
+    padding-left: 58px; }
+  .contact__switcher-box {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 1001;
+    cursor: pointer; }
+  .contact__switcher {
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    background-image: url(../assets/img/arrow-left.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-transition: transparent .4s ease-out;
+    -o-transition: transparent .4s ease-out;
+    transition: transparent .4s ease-out;
+    cursor: pointer; }
+  .contact__author {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 34px; }
+  .contact__author-name {
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #515151;
+    margin: 13px 0 0 0; }
+  .contact__author-profession {
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 5px; }
+  .contact__author-img {
+    width: 192px;
+    height: 192px;
+    border-radius: 50%;
+    border: solid 8px #fff;
+    -webkit-box-shadow: 2px 0 5px rgba(0, 0, 0, 0.15);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.15); }
 
 /* ------------ COMPONENTS ---------- */
 /* ------------ MAIN SVG DROP ---------- */
