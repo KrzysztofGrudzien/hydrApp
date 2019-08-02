@@ -25,7 +25,10 @@ const switcherMenu = document.querySelector('.header__nav-switcher-box--js'),
     statisticsLink = document.querySelector('.nav__list-item-statistic--js'),
     hidePartAchievements = document.querySelector('.achievements__switcher-box--js'),
     achievements = document.querySelector('.achievements--js'),
-    achievementsLink = document.querySelector('.nav__list-item-achievement--js');
+    achievementsLink = document.querySelector('.nav__list-item-achievement--js'),
+    hidePartContact = document.querySelector('.contact__switcher-box--js'),
+    contact = document.querySelector('.contact--js'),
+    contactLink = document.querySelector('.nav__list-item-contact--js');
 
 let glasses = 0;
 const maxGlasses = 10;
@@ -69,6 +72,21 @@ function hideAchievements() {
     arrowLeft.style.opacity = null;
 }
 
+function showContact() {
+    const arrowLeft = document.querySelector('.header__nav-switcher--close');
+    contact.removeAttribute('hidden');
+    contact.classList.add('nav--animation-right');
+    contact.classList.remove('nav--animation-left');
+    arrowLeft.style.opacity = '0';
+}
+
+function hideContact() {
+    const arrowLeft = document.querySelector('.header__nav-switcher--close');
+    contact.classList.remove('nav--animation-right');
+    contact.classList.add('nav--animation-left');
+    arrowLeft.style.opacity = null;
+}
+
 if (!localStorage.getItem(key)) {
     localStorage.setItem(key, 0);
     counterGlasses.innerHTML = `0/${maxGlasses}`;
@@ -101,4 +119,6 @@ statisticsLink.addEventListener('click', showStatistics);
 achievementsLink.addEventListener('click', showAchievements);
 hidePartStatistics.addEventListener('click', hideStatistics);
 hidePartAchievements.addEventListener('click', hideAchievements);
+contactLink.addEventListener('click', showContact);
+hidePartContact.addEventListener('click', hideContact);
 
