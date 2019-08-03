@@ -32,13 +32,12 @@ const switcherMenu = document.querySelector('.header__nav-switcher-box--js'),
     hidePartSettings = document.querySelector('.settings__switcher-box--js'),
     settings = document.querySelector('.settings--js'),
     settingsLink = document.querySelector('.nav__list-item-settings--js'),
-    percent = document.querySelector('.app__percent--js');
+    percent = document.querySelector('.app__percent--js'),
+    heart = document.querySelector('.app__heart--js');
 
 let glasses = 0;
 const unit = 200;
 const avarage = 2800;
-//const percent = `${Math.ceil((unit / avarage) * 100)}%`;
-//console.log(percent);
 const key = new Date().toISOString().slice(0, 10);
 
 function toggleMenu() {
@@ -122,6 +121,16 @@ function addGlass() {
     let glass = `${parseInt(localStorage.getItem(key))}`;
     let percentOfDrunkWater = `${Math.ceil(((glass * unit) / avarage) * 100)}%`;
     percent.innerHTML = percentOfDrunkWater;
+
+    if (glass > 5 && glass < 10) {
+        heart.style.animationDuration = "1s";
+    } else if (glass >= 10 && glass < 14) {
+        heart.style.animationDuration = ".8s";
+    } else if (glass >= 14) {
+        heart.style.animationDuration = ".6s";
+    } else {
+        heart.style.animationDuration = "1.2s";
+    }
 }
 
 function removeGlass() {
@@ -133,6 +142,16 @@ function removeGlass() {
         let glass = `${parseInt(localStorage.getItem(key))}`;
         let percentOfDrunkWater = `${Math.ceil(((glass * unit) / avarage) * 100)}%`;
         percent.innerHTML = percentOfDrunkWater;
+
+        if (glass > 5 && glass < 10) {
+            heart.style.animationDuration = "1s";
+        } else if (glass >= 10 && glass < 14) {
+            heart.style.animationDuration = ".8s";
+        } else if (glass >= 14) {
+            heart.style.animationDuration = ".6s";
+        } else {
+            heart.style.animationDuration = "1.2s";
+        }
     }
 }
 
