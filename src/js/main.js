@@ -33,7 +33,9 @@ const switcherMenu = document.querySelector('.header__nav-switcher-box--js'),
     settings = document.querySelector('.settings--js'),
     settingsLink = document.querySelector('.nav__list-item-settings--js'),
     percent = document.querySelector('.app__percent--js'),
-    heart = document.querySelector('.app__heart--js');
+    heart = document.querySelector('.app__heart--js'),
+    summary = document.querySelector('.nav__header-summary--js'),
+    progressBar = document.querySelector('.nav__header-progress-bar--js');
 
 let glasses = 0;
 const unit = 200;
@@ -113,6 +115,16 @@ if (!localStorage.getItem(key)) {
     counterGlasses.innerHTML = `${parseInt(0)}`;
 } else {
     counterGlasses.innerHTML = `${localStorage.getItem(key)}`;
+    let glass = `${parseInt(localStorage.getItem(key))}`;
+    let percentOfDrunkWater = `${Math.ceil(((glass * unit) / avarage) * 100)}%`;
+    let percentProgressBar = `${Math.ceil(((glass * unit) / avarage) * 100)}`;
+    percent.innerHTML = percentOfDrunkWater;
+    let glassUnit = glass * unit;
+    summary.textContent = `${glassUnit}ML / ${avarage}ML`;
+    progressBar.style.width = `${percentProgressBar}%`;
+    if (percentProgressBar > 100) {
+        progressBar.style.width = "100%";
+    }
 }
 
 function addGlass() {
@@ -120,7 +132,14 @@ function addGlass() {
     counterGlasses.innerHTML = `${parseInt(localStorage.getItem(key))}`;
     let glass = `${parseInt(localStorage.getItem(key))}`;
     let percentOfDrunkWater = `${Math.ceil(((glass * unit) / avarage) * 100)}%`;
+    let percentProgressBar = `${Math.ceil(((glass * unit) / avarage) * 100)}`;
     percent.innerHTML = percentOfDrunkWater;
+    let glassUnit = glass * unit;
+    summary.innerHTML = `${glassUnit}ML / ${avarage}ML`;
+    progressBar.style.width = `${percentProgressBar}%`;
+    if (percentProgressBar > 100) {
+        progressBar.style.width = "100%";
+    }
 
     if (glass > 5 && glass < 10) {
         heart.style.animationDuration = "1s";
@@ -141,7 +160,14 @@ function removeGlass() {
         localStorage.setItem(key, parseInt(localStorage.getItem(key)) - 1);
         let glass = `${parseInt(localStorage.getItem(key))}`;
         let percentOfDrunkWater = `${Math.ceil(((glass * unit) / avarage) * 100)}%`;
+        let percentProgressBar = `${Math.ceil(((glass * unit) / avarage) * 100)}`;
         percent.innerHTML = percentOfDrunkWater;
+        let glassUnit = glass * unit;
+        summary.textContent = `${glassUnit}ML / ${avarage}ML`;
+        progressBar.style.width = `${percentProgressBar}%`;
+        if (percentProgressBar > 100) {
+            progressBar.style.width = "100%";
+        }
 
         if (glass > 5 && glass < 10) {
             heart.style.animationDuration = "1s";
