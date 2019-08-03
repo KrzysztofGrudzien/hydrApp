@@ -34,6 +34,10 @@ const switcherMenu = document.querySelector('.header__nav-switcher-box--js'),
     settingsLink = document.querySelector('.nav__list-item-settings--js');
 
 let glasses = 0;
+const unit = 200;
+const avarage = 2800;
+//const percent = `${Math.ceil((unit / avarage) * 100)}%`;
+//console.log(percent);
 const key = new Date().toISOString().slice(0, 10);
 
 function toggleMenu() {
