@@ -141,8 +141,10 @@ if (!localStorage.getItem(key)) {
             let key = localStorage.key(i);
             let value = localStorage.getItem(key);
             dataTable.innerHTML += `
+            <tr class="table__data-header">
                 <td class="table__data table__data-key--js">${key}</td>
                 <td class="table__data table__data-value--js">${value}</td>
+            </tr>
             `;
         }
     }
