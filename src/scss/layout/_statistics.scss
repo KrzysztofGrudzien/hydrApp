@@ -130,6 +130,15 @@
         color: $grey;
     }
 
+    &__data-value, &__data-summary {
+        text-align: center;
+    }
+
+    &__data-summary {
+        font-weight: 900;
+        color: $grey;
+    }
+
     &__data-header:nth-child(odd) {
         background-color: $light-blue;
     }

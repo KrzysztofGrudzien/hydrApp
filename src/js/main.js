@@ -42,7 +42,6 @@ const switcherMenu = document.querySelector('.header__nav-switcher-box--js'),
     achievementValue = document.querySelector('.achievements__value--js'),
     dataTable = document.querySelector('.table__body--js');
 
-
 let glasses = 0;
 const unit = 200;
 const avarage = 2800;
@@ -128,29 +127,37 @@ if (!localStorage.getItem(key)) {
     let glassUnit = glass * unit;
     summary.textContent = `${glassUnit}ML / ${avarage}ML`;
     progressBar.style.width = `${percentProgressBar}%`;
-    if (percentProgressBar > 100) {
-        progressBar.style.width = "100%";
-    }
-    statisticVolumeValue.innerHTML = `${glassUnit}ML / DAY`;
-    statisticComplationValue.textContent = `${percentOfDrunkWater}`;
-    statisticFrequencyValue.innerHTML = `${glass} / DAY`;
-    achievementValue.innerHTML = `${avarage}ML`;
+    const achievementPercentProgressBar = document.querySelector('.achievements__progress-bar--js');
+    achievementPercentProgressBar.style.height = `${percentProgressBar}%`;
 
+    if (percentProgressBar > 100) progressBar.style.width = "100%";
+    if (achievementPercentProgressBar > 100) achievementPercentProgressBar.style.height = "100%";
+
+    let counter = 0;
     if (dataTable) {
         for (let i = 0; i < localStorage.length; i++) {
+            const maxGlasses = 14;
             let key = localStorage.key(i);
-            let value = localStorage.getItem(key);
+            let value = parseInt(localStorage.getItem(key));
             dataTable.innerHTML += `
             <tr class="table__data-header">
                 <td class="table__data table__data-key--js">${key}</td>
-                <td class="table__data table__data-value--js">${value}</td>
+                <td class="table__data table__data-value table__data-value--js">${value}</td>
             </tr>
             `;
+            const summary = document.querySelector('.table__data-summary--js');
+            counter += value;
+            summary.innerHTML = `${parseInt(counter)}`;
+            let averageVolume = (counter * unit) / localStorage.length;
+            statisticVolumeValue.innerHTML = `${averageVolume}ML / DAY`;
+            let drinkFrequency = Math.ceil((counter / localStorage.length));
+            statisticFrequencyValue.innerHTML = `${drinkFrequency} / DAY`;
+            let averageCompletion = Math.floor((drinkFrequency / maxGlasses) * 100).toFixed(2);
+            statisticComplationValue.innerHTML = `${averageCompletion}%`;
+            achievementValue.innerHTML = `${avarage}ML`;
         }
     }
 }
-
-
 
 function addGlass() {
     localStorage.setItem(key, parseInt(localStorage.getItem(key)) + 1);
@@ -162,9 +169,14 @@ function addGlass() {
     let glassUnit = glass * unit;
     summary.innerHTML = `${glassUnit}ML / ${avarage}ML`;
     progressBar.style.width = `${percentProgressBar}%`;
-    if (percentProgressBar > 100) {
-        progressBar.style.width = "100%";
-    }
+
+    if (percentProgressBar > 100) progressBar.style.width = "100%";
+    const achievementPercentProgressBar = document.querySelector('.achievements__progress-bar--js');
+    achievementPercentProgressBar.style.height = `${percentProgressBar}%`;
+
+    if (percentProgressBar > 100) progressBar.style.width = "100%";
+    if (achievementPercentProgressBar > 100) achievementPercentProgressBar.style.height = "100%";
+
     statisticVolumeValue.innerHTML = `${glassUnit}ML / DAY`;
     statisticComplationValue.textContent = `${percentOfDrunkWater}`;
     statisticFrequencyValue.innerHTML = `${glass} / DAY`;
@@ -194,9 +206,12 @@ function removeGlass() {
         let glassUnit = glass * unit;
         summary.textContent = `${glassUnit}ML / ${avarage}ML`;
         progressBar.style.width = `${percentProgressBar}%`;
-        if (percentProgressBar > 100) {
-            progressBar.style.width = "100%";
-        }
+        const achievementPercentProgressBar = document.querySelector('.achievements__progress-bar--js');
+        achievementPercentProgressBar.style.height = `${percentProgressBar}%`;
+
+        if (percentProgressBar > 100) progressBar.style.width = "100%";
+        if (achievementPercentProgressBar > 100) achievementPercentProgressBar.style.height = "100%";
+
         statisticVolumeValue.innerHTML = `${glassUnit}ML / DAY`;
         statisticComplationValue.textContent = `${percentOfDrunkWater}`;
         statisticFrequencyValue.innerHTML = `${glass} / DAY`;
@@ -213,6 +228,17 @@ function removeGlass() {
         }
     }
 }
+
+window.addEventListener('load', () => {
+    const data = document.querySelector('.app__loader--js');
+    const counter = document.querySelector('.app__glasses--js');
+    const percent = document.querySelector('.app__percent--js');
+    setTimeout(() => {
+        counter.removeAttribute('hidden');
+        percent.removeAttribute('hidden');
+        data.style.display = "none";
+    }, 3000);
+});
 
 btnRemoveGlass.addEventListener('click', removeGlass);
 btnAddGlass.addEventListener('click', addGlass);
