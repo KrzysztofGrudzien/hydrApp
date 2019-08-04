@@ -149,8 +149,10 @@ if (!localStorage.getItem(key)) {
             summary.innerHTML = `${parseInt(counter)}`;
             let averageVolume = (counter * unit) / localStorage.length;
             statisticVolumeValue.innerHTML = `${averageVolume}ML / DAY`;
+            let averageCompletion;
             statisticComplationValue.textContent = `${percentOfDrunkWater}`;
-            statisticFrequencyValue.innerHTML = `${glass} / DAY`;
+            let drinkFrequency = (counter / localStorage.length);
+            statisticFrequencyValue.innerHTML = `${drinkFrequency} / DAY`;
             achievementValue.innerHTML = `${avarage}ML`;
 
         }
