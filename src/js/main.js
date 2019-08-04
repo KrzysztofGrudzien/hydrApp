@@ -135,17 +135,20 @@ if (!localStorage.getItem(key)) {
     statisticComplationValue.textContent = `${percentOfDrunkWater}`;
     statisticFrequencyValue.innerHTML = `${glass} / DAY`;
     achievementValue.innerHTML = `${avarage}ML`;
-
+    let counter = 0;
     if (dataTable) {
         for (let i = 0; i < localStorage.length; i++) {
             let key = localStorage.key(i);
-            let value = localStorage.getItem(key);
+            let value = parseInt(localStorage.getItem(key));
             dataTable.innerHTML += `
             <tr class="table__data-header">
                 <td class="table__data table__data-key--js">${key}</td>
-                <td class="table__data table__data-value--js">${value}</td>
+                <td class="table__data table__data-value table__data-value--js">${value}</td>
             </tr>
             `;
+            const summary = document.querySelector('.table__data-summary--js');
+            counter += value;
+            summary.innerHTML = `${parseInt(counter)}`;
         }
     }
 }
