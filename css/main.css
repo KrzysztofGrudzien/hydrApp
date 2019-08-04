@@ -908,6 +908,11 @@ ol li {
     line-height: 20px;
     padding: 5px 0;
     color: #515151; }
+  .table__data-value, .table__data-summary {
+    text-align: center; }
+  .table__data-summary {
+    font-weight: 900;
+    color: #515151; }
   .table__data-header:nth-child(odd) {
     background-color: #CBECFE; }
 
@@ -980,6 +985,46 @@ ol li {
   .achievements__table {
     width: 100%;
     min-height: 80%; }
+  .achievements__box-achievements {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .achievements__box-percent {
+    width: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    text-align: right;
+    font-size: 12px;
+    padding-right: 10px; }
+  .achievements__box-progress-bar {
+    height: 95%;
+    width: 60px;
+    border: solid 1px #515151;
+    -ms-flex-item-align: center;
+        align-self: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse; }
+  .achievements__progress-bar {
+    width: 100%;
+    height: 0%;
+    background-color: #68C1F1; }
   .achievements__icon {
     margin-left: 17px;
     margin-top: 10px; }

@@ -83,7 +83,7 @@
                         <tfoot class="table__footer">
                             <tr class="table__row">
                                 <th class="table__row-head">Total of drank glasses</th>
-                                <td class="table__data-summary table__data-summary--js">???</td>
+                                <td class="table__data-summary table__data-summary table__data-summary--js"></td>
                             </tr>
                         </tfoot>
                     </table>
@@ -113,7 +113,21 @@
             </h2>
             <div class="achievements__box">
                 <img class="achievements__icon" src="assets/img/achievements.svg" alt="achievements of drinking water.">
-                <div class="achievements__table"></div>
+                <div class="achievements__table">
+                    <div class="achievements__box-achievements">
+                        <div class="achievements__box-percent">
+                            <div class="achievements__box-percent-100">100%</div>
+                            <div class="achievements__box-percent-80">80%</div>
+                            <div class="achievements__box-percent-60">60%</div>
+                            <div class="achievements__box-percent-40">40%</div>
+                            <div class="achievements__box-percent-20">20%</div>
+                            <div class="achievements__box-percent-0">0%</div>
+                        </div>
+                        <div class="achievements__box-progress-bar">
+                            <div class="achievements__progress-bar achievements__progress-bar--js"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="achievements__goals">
                 <div class="achievements__goal">
@@ -203,11 +217,11 @@
                 </div>
                 <button class="btn btn--add btn--add-js"></button>
                 <button class="btn btn--substract btn--substract-js"></button>
-                <div class="app__percent app__percent--js">0%</div>
+                <div class="app__percent app__percent--js" hidden>0%</div>
                 <img src="assets/img/drop.svg" alt="picture of drop.">
             </div>
-            <div class="app__loader" style="display: none">
-                <p class="app__loader-message">loading</p>
+            <div class="app__loader app__loader--js">
+                <p class=" app__loader-message">loading</p>
                 <div class="app__loader-box">
                     <div></div>
                     <div></div>
@@ -215,8 +229,8 @@
                     <div></div>
                 </div>
             </div>
-            <section class="app__glasses">
-                <h2 class="app__header-counter app__header-counter--js">0/10</h2>
+            <section class="app__glasses app__glasses--js" hidden>
+                <h2 class="app__header-counter app__header-counter--js">0</h2>
                 <p class="app__glass-dimention">200ML Glass</p>
             </section>
         </div>
