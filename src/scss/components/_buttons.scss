@@ -17,6 +17,7 @@
         background-image: url("../assets/img/add-glass.svg");
         background-repeat: no-repeat;
         background-position: center center;
+        touch-action: manipulation;
     }
 
     &--substract {
@@ -25,5 +26,6 @@
         background-image: url("../assets/img/remove-glass.svg");
         background-repeat: no-repeat;
         background-position: center center;
+        touch-action: manipulation;
     }
 }
