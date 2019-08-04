@@ -128,13 +128,11 @@ if (!localStorage.getItem(key)) {
     let glassUnit = glass * unit;
     summary.textContent = `${glassUnit}ML / ${avarage}ML`;
     progressBar.style.width = `${percentProgressBar}%`;
+
     if (percentProgressBar > 100) {
         progressBar.style.width = "100%";
     }
-    statisticVolumeValue.innerHTML = `${glassUnit}ML / DAY`;
-    statisticComplationValue.textContent = `${percentOfDrunkWater}`;
-    statisticFrequencyValue.innerHTML = `${glass} / DAY`;
-    achievementValue.innerHTML = `${avarage}ML`;
+
     let counter = 0;
     if (dataTable) {
         for (let i = 0; i < localStorage.length; i++) {
@@ -149,6 +147,12 @@ if (!localStorage.getItem(key)) {
             const summary = document.querySelector('.table__data-summary--js');
             counter += value;
             summary.innerHTML = `${parseInt(counter)}`;
+            let averageVolume = (counter * unit) / localStorage.length;
+            statisticVolumeValue.innerHTML = `${averageVolume}ML / DAY`;
+            statisticComplationValue.textContent = `${percentOfDrunkWater}`;
+            statisticFrequencyValue.innerHTML = `${glass} / DAY`;
+            achievementValue.innerHTML = `${avarage}ML`;
+
         }
     }
 }
