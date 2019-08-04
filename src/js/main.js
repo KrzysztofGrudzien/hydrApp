@@ -151,6 +151,8 @@ function addGlass() {
     }
     statisticVolumeValue.innerHTML = `${glassUnit}ML / DAY`;
     statisticComplationValue.textContent = `${percentOfDrunkWater}`;
+    statisticFrequencyValue.innerHTML = `${glass} / DAY`;
+    achievementValue.innerHTML = `${avarage}ML`;
 
     if (glass > 5 && glass < 10) {
         heart.style.animationDuration = "1s";
@@ -181,6 +183,8 @@ function removeGlass() {
         }
         statisticVolumeValue.innerHTML = `${glassUnit}ML / DAY`;
         statisticComplationValue.textContent = `${percentOfDrunkWater}`;
+        statisticFrequencyValue.innerHTML = `${glass} / DAY`;
+        achievementValue.innerHTML = `${avarage}ML`;
 
         if (glass > 5 && glass < 10) {
             heart.style.animationDuration = "1s";
