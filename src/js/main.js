@@ -136,6 +136,7 @@ if (!localStorage.getItem(key)) {
     let counter = 0;
     if (dataTable) {
         for (let i = 0; i < localStorage.length; i++) {
+            const maxGlasses = 14;
             let key = localStorage.key(i);
             let value = parseInt(localStorage.getItem(key));
             dataTable.innerHTML += `
@@ -149,12 +150,11 @@ if (!localStorage.getItem(key)) {
             summary.innerHTML = `${parseInt(counter)}`;
             let averageVolume = (counter * unit) / localStorage.length;
             statisticVolumeValue.innerHTML = `${averageVolume}ML / DAY`;
-            let averageCompletion;
-            statisticComplationValue.textContent = `${percentOfDrunkWater}`;
-            let drinkFrequency = (counter / localStorage.length);
+            let drinkFrequency = Math.ceil((counter / localStorage.length));
             statisticFrequencyValue.innerHTML = `${drinkFrequency} / DAY`;
+            let averageCompletion = Math.floor((drinkFrequency / maxGlasses) * 100).toFixed(2);
+            statisticComplationValue.innerHTML = `${averageCompletion}%`;
             achievementValue.innerHTML = `${avarage}ML`;
-
         }
     }
 }
