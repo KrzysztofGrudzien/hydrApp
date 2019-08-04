@@ -229,6 +229,17 @@ function removeGlass() {
     }
 }
 
+window.addEventListener('load', () => {
+    const data = document.querySelector('.app__loader--js');
+    const counter = document.querySelector('.app__glasses--js');
+    const percent = document.querySelector('.app__percent--js');
+    setTimeout(() => {
+        counter.removeAttribute('hidden');
+        percent.removeAttribute('hidden');
+        data.style.display = "none";
+    }, 3000);
+});
+
 btnRemoveGlass.addEventListener('click', removeGlass);
 btnAddGlass.addEventListener('click', addGlass);
 switcherMenu.addEventListener('click', toggleMenu);
