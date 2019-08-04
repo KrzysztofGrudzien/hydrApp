@@ -36,9 +36,9 @@
     <nav class="nav nav--js nav--animation-left" hidden>
         <header class="nav__header">
             <img class="nav__header-img" src="assets/img/drops.svg" alt="cartoon drops.">
-            <p class="nav__header-summary">200ML / 2000ML</p>
+            <p class="nav__header-summary nav__header-summary--js">200ML / 2000ML</p>
             <div class="nav__header-summary-progress">
-                <div class="nav__header-progress-bar"></div>
+                <div class="nav__header-progress-bar nav__header-progress-bar--js"></div>
             </div>
         </header>
         <div class="nav__content">
@@ -72,15 +72,15 @@
             <div class="statistics__averages">
                 <div class="statistics__average">
                     <p class="statistics__volume">Average volume</p>
-                    <span class="statistics__value">0ML / DAY</span>
+                    <span class="statistics__volume-value statistics__volume-value--js">0ML / DAY</span>
                 </div>
                 <div class="statistics__average">
-                    <p class="statistics__volume">Average complation</p>
-                    <span class="statistics__value">0%</span>
+                    <p class="statistics__complation">Average complation</p>
+                    <span class="statistics__complation-value statistics__complation-value--js">0%</span>
                 </div>
                 <div class="statistics__average">
-                    <p class="statistics__volume">Drink frequency</p>
-                    <span class="statistics__value">0 / DAY</span>
+                    <p class="statistics__frequency">Drink frequency</p>
+                    <span class="statistics__frequency-value statistics__frequency-value--js">0 / DAY</span>
                 </div>
             </div>
         </section>
@@ -98,7 +98,7 @@
             <div class="achievements__goals">
                 <div class="achievements__goal">
                     <p class="achievements__volume">Your goal</p>
-                    <span class="achievements__value">0ML</span>
+                    <span class="achievements__value achievements__value--js">0ML</span>
                 </div>
             </div>
         </section>
@@ -118,7 +118,7 @@
                 <div class="contact__details-email">
                     <img class="contact__details-email-icon" src="assets/img/contact.svg"
                         alt="email contact with the author.">
-                    <p class="contact__email">krzysztof.grudzien@gmail.com</p>
+                    <p class="contact__email">krzysztof.grudzien.fed@gmail.com</p>
                 </div>
                 <div class="contact__details-phone">
                     <img class="contact__details-phone-icon" src="assets/img/phone.svg"
@@ -178,11 +178,23 @@
     <main class="main">
         <div class="app">
             <div class="app__content">
+                <div class="app__heart-box">
+                    <div class="app__heart app__heart--js"></div>
+                </div>
                 <button class="btn btn--add btn--add-js"></button>
                 <button class="btn btn--substract btn--substract-js"></button>
+                <div class="app__percent app__percent--js">0%</div>
                 <img src="assets/img/drop.svg" alt="picture of drop.">
             </div>
-            <p class="app__loader" hidden>loading ...</p>
+            <div class="app__loader" style="display: none">
+                <p class="app__loader-message">loading</p>
+                <div class="app__loader-box">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
             <section class="app__glasses">
                 <h2 class="app__header-counter app__header-counter--js">0/10</h2>
                 <p class="app__glass-dimention">200ML Glass</p>
