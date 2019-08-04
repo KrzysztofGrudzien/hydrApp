@@ -1,12 +1,11 @@
 {
-  "name": "WTF: PWA",
-  "short_name": "WTF: PWA",
-  "theme_color": "#000000",
-  "background_color": "#000000",
+  "name": "HydrApp",
+  "short_name": "HydrApp",
+  "theme_color": "#68c1f1",
+  "background_color": "#68c1f1",
   "display": "standalone",
-  "orientation": "portrait",
-  "scope": "/wtf-gulp-starter/",
-  "start_url": "/wtf-gulp-starter/",
+  "Scope": "/hydrApp/",
+  "start_url": "/hydrApp/",
   "icons": [
     {
       "src": "assets/pwa/icons/icon-72x72.png",
@@ -48,5 +47,6 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "splash_pages": null
 }
