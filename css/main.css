@@ -1324,12 +1324,16 @@ ol li {
     right: 40px;
     background-image: url("../assets/img/add-glass.svg");
     background-repeat: no-repeat;
-    background-position: center center; }
+    background-position: center center;
+    -ms-touch-action: manipulation;
+        touch-action: manipulation; }
   .btn--substract {
     top: 135px;
     right: -10px;
     background-image: url("../assets/img/remove-glass.svg");
     background-repeat: no-repeat;
-    background-position: center center; }
+    background-position: center center;
+    -ms-touch-action: manipulation;
+        touch-action: manipulation; }
 
 /*# sourceMappingURL=main.css.map */
