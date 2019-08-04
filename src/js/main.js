@@ -35,7 +35,11 @@ const switcherMenu = document.querySelector('.header__nav-switcher-box--js'),
     percent = document.querySelector('.app__percent--js'),
     heart = document.querySelector('.app__heart--js'),
     summary = document.querySelector('.nav__header-summary--js'),
-    progressBar = document.querySelector('.nav__header-progress-bar--js');
+    progressBar = document.querySelector('.nav__header-progress-bar--js'),
+    statisticVolumeValue = document.querySelector('.statistics__volume-value--js'),
+    statisticComplationValue = document.querySelector('.statistics__complation-value--js'),
+    statisticFrequencyValue = document.querySelector('.statistics__frequency-value--js');
+
 
 let glasses = 0;
 const unit = 200;
@@ -125,6 +129,9 @@ if (!localStorage.getItem(key)) {
     if (percentProgressBar > 100) {
         progressBar.style.width = "100%";
     }
+    statisticVolumeValue.innerHTML = `${glassUnit}ML / DAY`;
+    statisticComplationValue.textContent = `${percentOfDrunkWater}`;
+    statisticFrequencyValue.innerHTML = `${glass} / DAY`;
 }
 
 function addGlass() {
@@ -140,6 +147,8 @@ function addGlass() {
     if (percentProgressBar > 100) {
         progressBar.style.width = "100%";
     }
+    statisticVolumeValue.innerHTML = `${glassUnit}ML / DAY`;
+    statisticComplationValue.textContent = `${percentOfDrunkWater}`;
 
     if (glass > 5 && glass < 10) {
         heart.style.animationDuration = "1s";
@@ -168,6 +177,8 @@ function removeGlass() {
         if (percentProgressBar > 100) {
             progressBar.style.width = "100%";
         }
+        statisticVolumeValue.innerHTML = `${glassUnit}ML / DAY`;
+        statisticComplationValue.textContent = `${percentOfDrunkWater}`;
 
         if (glass > 5 && glass < 10) {
             heart.style.animationDuration = "1s";
