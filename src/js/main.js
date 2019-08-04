@@ -38,7 +38,8 @@ const switcherMenu = document.querySelector('.header__nav-switcher-box--js'),
     progressBar = document.querySelector('.nav__header-progress-bar--js'),
     statisticVolumeValue = document.querySelector('.statistics__volume-value--js'),
     statisticComplationValue = document.querySelector('.statistics__complation-value--js'),
-    statisticFrequencyValue = document.querySelector('.statistics__frequency-value--js');
+    statisticFrequencyValue = document.querySelector('.statistics__frequency-value--js'),
+    achievementValue = document.querySelector('.achievements__value--js');
 
 
 let glasses = 0;
@@ -132,6 +133,7 @@ if (!localStorage.getItem(key)) {
     statisticVolumeValue.innerHTML = `${glassUnit}ML / DAY`;
     statisticComplationValue.textContent = `${percentOfDrunkWater}`;
     statisticFrequencyValue.innerHTML = `${glass} / DAY`;
+    achievementValue.innerHTML = `${avarage}ML`;
 }
 
 function addGlass() {
