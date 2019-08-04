@@ -31,9 +31,20 @@ const switcherMenu = document.querySelector('.header__nav-switcher-box--js'),
     contactLink = document.querySelector('.nav__list-item-contact--js'),
     hidePartSettings = document.querySelector('.settings__switcher-box--js'),
     settings = document.querySelector('.settings--js'),
-    settingsLink = document.querySelector('.nav__list-item-settings--js');
+    settingsLink = document.querySelector('.nav__list-item-settings--js'),
+    percent = document.querySelector('.app__percent--js'),
+    heart = document.querySelector('.app__heart--js'),
+    summary = document.querySelector('.nav__header-summary--js'),
+    progressBar = document.querySelector('.nav__header-progress-bar--js'),
+    statisticVolumeValue = document.querySelector('.statistics__volume-value--js'),
+    statisticComplationValue = document.querySelector('.statistics__complation-value--js'),
+    statisticFrequencyValue = document.querySelector('.statistics__frequency-value--js'),
+    achievementValue = document.querySelector('.achievements__value--js');
+
 
 let glasses = 0;
+const unit = 200;
+const avarage = 2800;
 const key = new Date().toISOString().slice(0, 10);
 
 function toggleMenu() {
@@ -106,14 +117,50 @@ function hideSettings() {
 
 if (!localStorage.getItem(key)) {
     localStorage.setItem(key, 0);
-    counterGlasses.innerHTML = `0/${maxGlasses}`;
+    counterGlasses.innerHTML = `${parseInt(0)}`;
 } else {
     counterGlasses.innerHTML = `${localStorage.getItem(key)}`;
+    let glass = `${parseInt(localStorage.getItem(key))}`;
+    let percentOfDrunkWater = `${Math.ceil(((glass * unit) / avarage) * 100)}%`;
+    let percentProgressBar = `${Math.ceil(((glass * unit) / avarage) * 100)}`;
+    percent.innerHTML = percentOfDrunkWater;
+    let glassUnit = glass * unit;
+    summary.textContent = `${glassUnit}ML / ${avarage}ML`;
+    progressBar.style.width = `${percentProgressBar}%`;
+    if (percentProgressBar > 100) {
+        progressBar.style.width = "100%";
+    }
+    statisticVolumeValue.innerHTML = `${glassUnit}ML / DAY`;
+    statisticComplationValue.textContent = `${percentOfDrunkWater}`;
+    statisticFrequencyValue.innerHTML = `${glass} / DAY`;
+    achievementValue.innerHTML = `${avarage}ML`;
 }
 
 function addGlass() {
     localStorage.setItem(key, parseInt(localStorage.getItem(key)) + 1);
     counterGlasses.innerHTML = `${parseInt(localStorage.getItem(key))}`;
+    let glass = `${parseInt(localStorage.getItem(key))}`;
+    let percentOfDrunkWater = `${Math.ceil(((glass * unit) / avarage) * 100)}%`;
+    let percentProgressBar = `${Math.ceil(((glass * unit) / avarage) * 100)}`;
+    percent.innerHTML = percentOfDrunkWater;
+    let glassUnit = glass * unit;
+    summary.innerHTML = `${glassUnit}ML / ${avarage}ML`;
+    progressBar.style.width = `${percentProgressBar}%`;
+    if (percentProgressBar > 100) {
+        progressBar.style.width = "100%";
+    }
+    statisticVolumeValue.innerHTML = `${glassUnit}ML / DAY`;
+    statisticComplationValue.textContent = `${percentOfDrunkWater}`;
+
+    if (glass > 5 && glass < 10) {
+        heart.style.animationDuration = "1s";
+    } else if (glass >= 10 && glass < 14) {
+        heart.style.animationDuration = ".8s";
+    } else if (glass >= 14) {
+        heart.style.animationDuration = ".6s";
+    } else {
+        heart.style.animationDuration = "1.2s";
+    }
 }
 
 function removeGlass() {
@@ -122,6 +169,28 @@ function removeGlass() {
     } else {
         counterGlasses.innerHTML = `${parseInt(localStorage.getItem(key) - 1)}`;
         localStorage.setItem(key, parseInt(localStorage.getItem(key)) - 1);
+        let glass = `${parseInt(localStorage.getItem(key))}`;
+        let percentOfDrunkWater = `${Math.ceil(((glass * unit) / avarage) * 100)}%`;
+        let percentProgressBar = `${Math.ceil(((glass * unit) / avarage) * 100)}`;
+        percent.innerHTML = percentOfDrunkWater;
+        let glassUnit = glass * unit;
+        summary.textContent = `${glassUnit}ML / ${avarage}ML`;
+        progressBar.style.width = `${percentProgressBar}%`;
+        if (percentProgressBar > 100) {
+            progressBar.style.width = "100%";
+        }
+        statisticVolumeValue.innerHTML = `${glassUnit}ML / DAY`;
+        statisticComplationValue.textContent = `${percentOfDrunkWater}`;
+
+        if (glass > 5 && glass < 10) {
+            heart.style.animationDuration = "1s";
+        } else if (glass >= 10 && glass < 14) {
+            heart.style.animationDuration = ".8s";
+        } else if (glass >= 14) {
+            heart.style.animationDuration = ".6s";
+        } else {
+            heart.style.animationDuration = "1.2s";
+        }
     }
 }
 

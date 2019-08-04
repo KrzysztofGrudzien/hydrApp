@@ -3,18 +3,19 @@
 /* ================================== */
 .app {
     &__loader {
+        display: flex;
+        justify-content: center;
         margin: 63px 0 0 0;
         text-align: center;
         font-size: 30px;
-        line-height: 40px;
         text-transform: uppercase;
-        font-weight: 400;
+        font-weight: 300;
         color: $light-blue;
     }
 
     &__header-counter {
-        margin: 20px 0 0 0;
-        font-size: 40px;
+        margin: 20px 0 10px 0;
+        font-size: 50px;
         font-weight: 400;
         line-height: 53px;
         text-align: center;
@@ -32,5 +33,92 @@
         display: flex;
         justify-content: center;
         position: relative;
+    }
+
+    &__loader-box {
+        position: relative;
+        width: 64px;
+        height: 64px;
+        margin-top: 24px;
+        margin-left: 10px;
+    }
+
+    &__loader-box div {
+        position: absolute;
+        top: 27px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #fff;
+        animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    }
+
+    &__loader-box div:nth-child(1) {
+        left: 6px;
+        animation: loader1 0.6s infinite;
+    }
+
+    &__loader-box div:nth-child(2) {
+        left: 6px;
+        animation: loader2 0.6s infinite;
+    }
+
+    &__loader-box div:nth-child(3) {
+        left: 26px;
+        animation: loader2 0.6s infinite;
+    }
+
+    &__loader-box div:nth-child(4) {
+        left: 45px;
+        animation: loader3 0.6s infinite;
+    }
+
+    &__heart-box {
+        display: inline-block;
+        position: absolute;
+        width: 64px;
+        height: 64px;
+        transform: rotate(45deg);
+        transform-origin: 32px 32px;
+        top: 0;
+        left: 0;
+    }
+
+    &__heart-box &__heart {
+        top: 23px;
+        left: 19px;
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        background: $red;
+        animation: beatingHeart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    &__heart-box &__heart:after,
+    &__heart-box &__heart:before {
+        content: " ";
+        position: absolute;
+        display: block;
+        width: 26px;
+        height: 26px;
+        background: $red;
+    }
+
+    &__heart-box &__heart:before {
+        left: -17px;
+        border-radius: 50% 0 0 50%;
+    
+    }
+
+    &__heart-box &__heart:after {
+        top: -17px;
+        border-radius: 50% 50% 0 0;
+    }
+
+    &__percent {
+        position: absolute;
+        bottom: 40px;
+        font-size: 50px;
+        color: $lighter-blue;
     }
 }
