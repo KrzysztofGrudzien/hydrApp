@@ -42,7 +42,6 @@ const switcherMenu = document.querySelector('.header__nav-switcher-box--js'),
     achievementValue = document.querySelector('.achievements__value--js'),
     dataTable = document.querySelector('.table__body--js');
 
-
 let glasses = 0;
 const unit = 200;
 const avarage = 2800;
@@ -128,10 +127,11 @@ if (!localStorage.getItem(key)) {
     let glassUnit = glass * unit;
     summary.textContent = `${glassUnit}ML / ${avarage}ML`;
     progressBar.style.width = `${percentProgressBar}%`;
+    const achievementPercentProgressBar = document.querySelector('.achievements__progress-bar--js');
+    achievementPercentProgressBar.style.height = `${percentProgressBar}%`;
 
-    if (percentProgressBar > 100) {
-        progressBar.style.width = "100%";
-    }
+    if (percentProgressBar > 100) progressBar.style.width = "100%";
+    if (achievementPercentProgressBar > 100) achievementPercentProgressBar.style.height = "100%";
 
     let counter = 0;
     if (dataTable) {
@@ -159,8 +159,6 @@ if (!localStorage.getItem(key)) {
     }
 }
 
-
-
 function addGlass() {
     localStorage.setItem(key, parseInt(localStorage.getItem(key)) + 1);
     counterGlasses.innerHTML = `${parseInt(localStorage.getItem(key))}`;
@@ -171,9 +169,14 @@ function addGlass() {
     let glassUnit = glass * unit;
     summary.innerHTML = `${glassUnit}ML / ${avarage}ML`;
     progressBar.style.width = `${percentProgressBar}%`;
-    if (percentProgressBar > 100) {
-        progressBar.style.width = "100%";
-    }
+
+    if (percentProgressBar > 100) progressBar.style.width = "100%";
+    const achievementPercentProgressBar = document.querySelector('.achievements__progress-bar--js');
+    achievementPercentProgressBar.style.height = `${percentProgressBar}%`;
+
+    if (percentProgressBar > 100) progressBar.style.width = "100%";
+    if (achievementPercentProgressBar > 100) achievementPercentProgressBar.style.height = "100%";
+
     statisticVolumeValue.innerHTML = `${glassUnit}ML / DAY`;
     statisticComplationValue.textContent = `${percentOfDrunkWater}`;
     statisticFrequencyValue.innerHTML = `${glass} / DAY`;
@@ -203,9 +206,12 @@ function removeGlass() {
         let glassUnit = glass * unit;
         summary.textContent = `${glassUnit}ML / ${avarage}ML`;
         progressBar.style.width = `${percentProgressBar}%`;
-        if (percentProgressBar > 100) {
-            progressBar.style.width = "100%";
-        }
+        const achievementPercentProgressBar = document.querySelector('.achievements__progress-bar--js');
+        achievementPercentProgressBar.style.height = `${percentProgressBar}%`;
+
+        if (percentProgressBar > 100) progressBar.style.width = "100%";
+        if (achievementPercentProgressBar > 100) achievementPercentProgressBar.style.height = "100%";
+
         statisticVolumeValue.innerHTML = `${glassUnit}ML / DAY`;
         statisticComplationValue.textContent = `${percentOfDrunkWater}`;
         statisticFrequencyValue.innerHTML = `${glass} / DAY`;
