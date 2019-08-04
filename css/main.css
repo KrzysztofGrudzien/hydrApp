@@ -845,7 +845,13 @@ ol li {
     margin-bottom: 30px; }
   .statistics__table {
     width: 100%;
-    min-height: 80%; }
+    min-height: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   .statistics__icon {
     margin-left: 17px;
     margin-top: 10px; }
@@ -881,6 +887,29 @@ ol li {
     border: none; }
   .statistics__value {
     color: #3C7DC7; }
+
+.table {
+  margin-top: 30px; }
+  .table__row {
+    margin: 0;
+    padding: 0; }
+  .table__row-header {
+    vertical-align: 0; }
+  .table__row-head {
+    text-align: left;
+    height: 20px;
+    line-height: 20px;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: 400;
+    color: #3C7DC7; }
+  .table__data {
+    height: 20px;
+    line-height: 20px;
+    padding: 5px 0;
+    color: #515151; }
+  .table__data-header:nth-child(odd) {
+    background-color: #CBECFE; }
 
 /* ================================== */
 /*        PART OF APP CONTENT         */
