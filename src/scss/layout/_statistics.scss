@@ -65,6 +65,8 @@
     &__table {
         width: 100%;
         min-height: 80%;
+        display: flex;
+        justify-content: center;
     }
 
     &__icon {
@@ -96,5 +98,39 @@
 
     &__value {
         color: $blue-dark;
+    }
+}
+
+.table {
+    margin-top: 30px;
+
+    &__row {
+        margin: 0;
+        padding: 0;  
+    }
+
+    &__row-header {
+        vertical-align: 0;
+    }
+
+    &__row-head {
+        text-align: left;
+        height: 20px;
+        line-height: 20px;
+        padding: 10px 0;
+        font-size: 20px;
+        font-weight: 400;
+        color: $blue-dark;
+    }
+
+    &__data {
+        height: 20px;
+        line-height: 20px;
+        padding: 5px 0;
+        color: $grey;
+    }
+
+    &__data-header:nth-child(odd) {
+        background-color: $light-blue;
     }
 }

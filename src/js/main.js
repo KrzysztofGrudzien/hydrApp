@@ -39,7 +39,8 @@ const switcherMenu = document.querySelector('.header__nav-switcher-box--js'),
     statisticVolumeValue = document.querySelector('.statistics__volume-value--js'),
     statisticComplationValue = document.querySelector('.statistics__complation-value--js'),
     statisticFrequencyValue = document.querySelector('.statistics__frequency-value--js'),
-    achievementValue = document.querySelector('.achievements__value--js');
+    achievementValue = document.querySelector('.achievements__value--js'),
+    dataTable = document.querySelector('.table__body--js');
 
 
 let glasses = 0;
@@ -134,7 +135,22 @@ if (!localStorage.getItem(key)) {
     statisticComplationValue.textContent = `${percentOfDrunkWater}`;
     statisticFrequencyValue.innerHTML = `${glass} / DAY`;
     achievementValue.innerHTML = `${avarage}ML`;
+
+    if (dataTable) {
+        for (let i = 0; i < localStorage.length; i++) {
+            let key = localStorage.key(i);
+            let value = localStorage.getItem(key);
+            dataTable.innerHTML += `
+            <tr class="table__data-header">
+                <td class="table__data table__data-key--js">${key}</td>
+                <td class="table__data table__data-value--js">${value}</td>
+            </tr>
+            `;
+        }
+    }
 }
+
+
 
 function addGlass() {
     localStorage.setItem(key, parseInt(localStorage.getItem(key)) + 1);
