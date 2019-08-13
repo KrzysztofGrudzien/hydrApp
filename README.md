@@ -1,4 +1,4 @@
-![Homepage screenshot](github/screenshot.jpg)
+![Homepage screenshot](github/hydrapp.jpg)
 
 # hydrApp - PWA
 If you want to know how my PWA looks like click here -> [PWA hydrApp](https://krzysztofgrudzien.github.io/hydrApp/)
