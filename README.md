@@ -1,7 +1,7 @@
 ![Homepage screenshot](github/screenshot.jpg)
 
 # hydrApp - PWA
-If you want to know how my PWA looks like click here -> [Simple Editor](https://krzysztofgrudzien.github.io/hydrApp/)
+If you want to know how my PWA looks like click here -> [PWA hydrApp](https://krzysztofgrudzien.github.io/hydrApp/)
 
 ## The aim of this project 🚀
 The main aim of this project is creating PWA aplication using localStorage as a databases.
