@@ -26,6 +26,8 @@ The main aim of this project is creating PWA aplication using localStorage as a 
 1. Click the link I give you and install the app.
 2. Add or remove the glass of drank water.
 3. All drank the glasses are assigned in the memory of the App.
+4. The localStorage create a history of drank water glasses and add it to the history table.
+5. Every day is a new history.
 4. The typical average for an adult person is 2800ml (14 glasses).
 5. All statistics are based on this average.
 
